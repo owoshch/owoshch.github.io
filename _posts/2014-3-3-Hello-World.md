@@ -1,11 +1,36 @@
 ---
 layout: post
-title:  "English Determiners Correction with Tensorflow"
-description: "GloVe, Window Classification and bi-LSTM for determiners correction"
-excerpt: "GloVe, Window Classification and bi-LSTM for determiners correction"
-date:   2018-03-17
+title:  "Sequence Tagging with Tensorflow"
+description: "GloVe + character embeddings + bi-LSTM + CRF for Sequence Tagging (Named Entity Recognition, NER, POS) - NLP example of bidirectionnal RNN and CRF in Tensorflow"
+excerpt: "bi-LSTM + CRF with character embeddings for NER and POS"
+date:   2017-04-05
 mathjax: true
 comments: true
 tags: tensorflow NLP
-github: https://github.com/owoshch
+github: https://github.com/guillaumegenthial/sequence_tagging
 ---
+
+Code is available on [github](https://github.com/guillaumegenthial/sequence_tagging).
+
+
+## Demo
+
+Enter sentences like `Monica and Chandler met at Central Perk`, `Obama was president of the United States`, `John went to New York to interview with Microsoft` and then hit the button.
+
+{% include api_ner.html
+    placeholder="I love Paris"
+    default_input="I love Paris"
+    default_output="O O    B-LOC"
+    header="Interact with the model!"
+    url="https://api-ner.herokuapp.com/api"
+%}
+
+**Disclaimer:** as you may notice, the tagger is far from being perfect. Some errors are due to the fact that the demo uses a reduced vocabulary (lighter for the API). But not all. It is also very sensible to capital letters, which comes both from the architecture of the model and the training data. For more information about the demo, see [here](https://guillaumegenthial.github.io/serving.html).
+
+## Introduction
+
+I remember the first time I heard about the magic of Deep Learning for **Natural Language Processing (NLP)**. I was just starting a project with a young French startup [Riminder](https://www.riminder.net) and it was the first time I heard about word embeddings. There are moments in life when the confrontation with a new theory seems to make everything else irrelevant. Hearing about word vectors that encode similarity and meaning between words was one of these moments. I was baffled by the simplicity of the model as I started to play with these new concepts, building my first recurrent neural network for sentiment analysis. A few months later, as part of the master thesis of my master in the French university [Ecole polytechnique](https://www.polytechnique.edu) I was working on more advanced models for sequence tagging at [Proxem](https://www.proxem.com/en/).
+
+{% include image.html url="https://nlp.stanford.edu/projects/glove/images/man_woman.jpg"
+description="Linear Dependencies between word vectors - GloVe" %}
+
