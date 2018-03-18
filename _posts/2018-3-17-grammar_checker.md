@@ -25,20 +25,19 @@ Enter sentences like `I live in White House`, `London is a capital of Great Brit
 **Disclaimer:** This system is trained on movie dialogs dataset. Hopefully, with a larger dataset we will be able to achieve better performance. System still fails with sequences like `I have a ball. The ball is red.`
 
 
-# Table of Contents
+
 # Table of Contents
 1. [Challenge](#challenge)
 2. [Data](#data)
 3. [Baseline: Window Classification Model](#baseline)
 4. [bi-LSTM for characters and words embeddings](#bi-lstm)
 
-## Challenge <a name="challenge"></a>
+<a name="challenge"></a>
+## Challenge 
 
 I suck in placing determiners correctly.
 
 ## Data <a name="data"></a>
-
-1. Preprocessing
 
 We used [Cornell Movie Dialogs Corpus](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). We store each given utterance (no matter how sentences are there) in a text file with one word and its class per line. 
 
@@ -55,7 +54,7 @@ red O
 . O
 ```
 
-2. Train-Dev-Test split
+## Train-Dev-Test split
 
 Liza will write it down.
 
