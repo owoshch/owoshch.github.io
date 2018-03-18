@@ -25,13 +25,15 @@ Enter sentences like `I live in White House`, `London is a capital of Great Brit
     url="https://grammar-checker.herokuapp.com/api"
 %}
 
-**Disclaimer:** This system is trained on movie dialogs dataset. Hopefully, with a larger dataset we will be able to achieve better performance. System still fails in sequences like `I have a ball. The ball is red.`
+**Disclaimer:** This system is trained on movie dialogs dataset. Hopefully, with a larger dataset we will be able to achieve better performance. System still fails with sequences like `I have a ball. The ball is red.`
 
 ## Baseline
 
 
 Window classification model. Window size 5. Softmax regression. Все дела. Ричард, разреши мне прийти на постер сессию, пожалуйста.
 
+## Final version
 
+bi-LSTM for characters. bi-LSTM for words. Ну и всякие остальные красивости. Завтра допишу.
 
 
