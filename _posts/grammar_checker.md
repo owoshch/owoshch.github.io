@@ -7,10 +7,10 @@ date:   2018-03-17
 mathjax: true
 comments: true
 tags: tensorflow NLP
-github: https://github.com/guillaumegenthial/sequence_tagging
+github: 
 ---
 
-Code is available on [github](https://github.com/guillaumegenthial/sequence_tagging).
+
 
 
 ## Demo
