@@ -33,9 +33,9 @@ A brief overview of window models you can find in [CS224n Lecture 4, slide 17](h
 We used the following configuration:
 
 * Embed a word and its neightboors using [GloVe](https://nlp.stanford.edu/projects/glove/) vectors. 
-... We made experiments for window sizes 3, 5 and 7 which corresponds to 1, 2 or 3 neighboor words for a given center word. 
+...We made experiments for window sizes 3, 5 and 7 which corresponds to 1, 2 or 3 neighboor words for a given center word. 
 * Apply a one-hidden-layer neural network to classify a given word.
-... We introduces four classes with respect to particular determiners before a given word: O for a blank space, A, AN and THE
+...We introduces four classes with respect to particular determiners before a given word: O for a blank space, A, AN and THE
 
 #### Data
 
