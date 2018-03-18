@@ -1,35 +1,22 @@
 
-
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="custom.css">
-</head>
-
-
-<body>
-    <div class="container col-lg-6">
-        <div style="padding-bottom: 0.5cm">
-            <div class="card text-center bg-light">
-                <div class="card-body" style="padding-bottom: 0.2cm">
-                    <input class="card-title form-control" type="text" id="input" name="input" placeholder="Input sentence"/>
-                    <button class="card-text btn btn-outline-primary" id="btn">Check!</button>
-                    <div class="spinner" id="spinner" style="display: none">
-                      <div class="double-bounce1"></div>
-                      <div class="double-bounce2"></div>
-                    </div>
-                </div>
-                <div class="card-footer bg-white">
-                    <pre class="card-text api-pre" style="padding-bottom: 0.2cm">
-                        <div class="item" id="api_input">System will check whether you placed articles correctly</div>
-                        <div class="item" id="api_output">System will check whether you placed THE articles correctly</div>
-                    </pre>
-                </div>
+<div style="padding-bottom: 0.5cm">
+    <div class="card text-center bg-light">
+        <div class="card-body">
+            <input class="card-title form-control" type="text" id="input" name="input" placeholder="{{ include.placeholder }}"/>
+            <button class="card-text btn btn-outline-primary" id="btn">Find Entities</button>
+            <div class="spinner" id="spinner" style="display: none">
+              <div class="double-bounce1"></div>
+              <div class="double-bounce2"></div>
             </div>
         </div>
+        <div class="card-footer bg-white">
+            <pre class="card-text api-pre" style="padding-bottom: 0.2cm">
+                <div class="item" id="api_input"> {{ include.default_input }} </div>
+                <div class="item" id="api_output"> {{ include.default_output }} </div>
+            </pre>
+        </div>
     </div>
-</body>
-
+</div>
 
 
 <script type="text/javascript">
@@ -39,8 +26,7 @@
         $('#spinner').toggle();
 
         $.ajax({
-            url: "http://0.0.0.0:5000/api",
-            //URL: "https://grammar-checker.herokuapp.com/api",
+            url: "{{ include.url }}",
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(input),
@@ -72,6 +58,13 @@
 
 
     $( document ).ready(function() {
+        // randomly request for everyone loading the page to keep api awake
+        if ( Math.random() > 0.5 ) {
+            var input = "I love Paris";
+            api_call(input);
+            input = "";
+        }
+
         // request when clicking on the button
         $('#btn').click(function() {
             // get the input data
