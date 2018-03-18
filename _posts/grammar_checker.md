@@ -7,7 +7,7 @@ date:   2018-03-17
 mathjax: true
 comments: true
 tags: tensorflow NLP
-github: 
+github: https://github.com/owoshch
 ---
 
 
