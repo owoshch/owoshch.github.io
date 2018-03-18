@@ -37,7 +37,8 @@ Enter sentences like `I live in White House`, `London is a capital of Great Brit
 
 I suck in placing determiners correctly.
 
-## Data <a name="data"></a>
+<a name="data"></a>
+## Data
 
 We used [Cornell Movie Dialogs Corpus](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). We store each given utterance (no matter how sentences are there) in a text file with one word and its class per line. 
 
@@ -58,8 +59,8 @@ red O
 
 Liza will write it down.
 
-
-## Baseline: Window Classification Model <a name="baseline"></a>
+<a name="baseline"></a>
+## Baseline: Window Classification Model 
 
 Determiners are strongly connected with the words around them. Thus, we decided to take a window classification model as a baseline. I took a model from the second assignment of [CS224d: Deep Learning for Natural Language Processing](http://cs224d.stanford.edu/), a precursor of [CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/syllabus.html)
 
@@ -72,9 +73,8 @@ We used the following configuration:
 * Apply a one-hidden-layer neural network to classify a given word. We introduces four classes with respect to particular determiners before a given word: O for a blank space, A, AN and THE.
 
 
-
-## Final version <a name="bi-lstm"></a>
-
+<a name="bi-lstm"></a>
+## Final version 
 bi-LSTM for characters. bi-LSTM for words. Ну и всякие остальные красивости. Завтра допишу.
 
 
