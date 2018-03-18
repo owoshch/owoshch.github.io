@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="custom.css">
 </head>
 
+
 <body>
     <div class="container col-lg-6">
         <div style="padding-bottom: 0.5cm">
             <div class="card text-center bg-light">
                 <div class="card-body" style="padding-bottom: 0.2cm">
-                    <input class="card-title form-control" type="text" id="input" name="input" placeholder="{{ include.placeholder }}"/>
-                    <button class="card-text btn btn-outline-primary" id="btn">Check!</button>
+                    <input class="card-title form-control" type="text" id="input" name="input" placeholder="Input sentence"/>
+                    <button class="card-text btn btn-outline-primary" id="btn">Find Entities</button>
                     <div class="spinner" id="spinner" style="display: none">
                       <div class="double-bounce1"></div>
                       <div class="double-bounce2"></div>
@@ -20,14 +21,22 @@
                 </div>
                 <div class="card-footer bg-white">
                     <pre class="card-text api-pre" style="padding-bottom: 0.2cm">
-                        <div class="item" id="api_input"> {{ include.default_input }} </div>
-                        <div class="item" id="api_output"> {{ include.default_output }} </div>
+                        <div class="item">Your input:</div>
+                        <div class="item" id="api_input">I love Paris </div>
+                    </pre>
+                </div>
+                <div class="card-footer bg-white">
+                    <pre class="card-text api-pre" style="padding-bottom: 0.2cm">
+                        <div class="item">System response:</div>
+                        <div class="item" id="api_output">0 0   B-LOC</div>
                     </pre>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
+
 
 <script type="text/javascript">
     function api_call(input) {
@@ -36,7 +45,7 @@
         $('#spinner').toggle();
 
         $.ajax({
-            url: "{{ include.url }}",
+            url: "https://grammar-checker.herokuapp.com/api",
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(input),
@@ -47,8 +56,8 @@
                 $('#spinner').toggle();
 
                 // fill the html for answer
-                $('#api_input').html( data.input );
-                $('#api_output').html( data.output );
+                $('#api_input').html(data.input );
+                $('#api_output').html(data.output );
 
                 $("#input").val("");
             },
@@ -68,13 +77,6 @@
 
 
     $( document ).ready(function() {
-        // randomly request for everyone loading the page to keep api awake
-        if ( Math.random() > 0.5 ) {
-            var input = "London is a capital of Great Britain.";
-            api_call(input);
-            input = "";
-        }
-
         // request when clicking on the button
         $('#btn').click(function() {
             // get the input data
@@ -85,4 +87,3 @@
     });
 
 </script>
-
