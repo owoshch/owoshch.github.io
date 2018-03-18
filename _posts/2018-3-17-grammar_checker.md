@@ -49,7 +49,7 @@ I O
 have O
 ball A
 . O
-Ball THE
+ball THE
 is O
 red O
 . O
