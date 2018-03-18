@@ -24,27 +24,23 @@ Enter sentences like `I live in White House`, `London is a capital of Great Brit
 
 **Disclaimer:** This system is trained on movie dialogs dataset. Hopefully, with a larger dataset we will be able to achieve better performance. System still fails with sequences like `I have a ball. The ball is red.`
 
-## Baseline: Window classification model.
 
-Determiners are strongly connected with the words around them. Thus, we decided to take a window classification model as a baseline. I took a model from the second assignment of [CS224d: Deep Learning for Natural Language Processing](http://cs224d.stanford.edu/), a precursor of [CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/syllabus.html)
+# Table of Contents
+# Table of Contents
+1. [Challenge](#challenge)
+2. [Data](#data)
+3. [Baseline: Window Classification Model](#baseline)
+4. [bi-LSTM for characters and words embeddings](#bi-lstm)
 
-A brief overview of window models you can find in [CS224n Lecture 4, slide 17](http://web.stanford.edu/class/cs224n/lectures/lecture4.pdf).
+## Challenge <a name="challenge"></a>
 
-We used the following configuration:
+I suck in placing determiners correctly.
 
-* Embed a word and its neightboors using [GloVe](https://nlp.stanford.edu/projects/glove/) vectors.
+## Data <a name="data"></a>
 
-...We made experiments for window sizes 3, 5 and 7 which corresponds to 1, 2 or 3 neighboor words for a given center word. 
+1. Preprocessing
 
-* Apply a one-hidden-layer neural network to classify a given word.
-
-...We introduces four classes with respect to particular determiners before a given word: O for a blank space, A, AN and THE
-
-#### Data
-
-##### Preprocessing
-
-We used [Cornell Movie Dialogs Corpus](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html).We store each given utterance (no matter how sentences are there) in a text file with one word and its class per line. 
+We used [Cornell Movie Dialogs Corpus](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). We store each given utterance (no matter how sentences are there) in a text file with one word and its class per line. 
 
 Example: `I have a ball. The ball is red.`
 
@@ -59,11 +55,26 @@ red O
 . O
 ```
 
-##### Train-Dev-Test split
+2. Train-Dev-Test split
 
 Liza will write it down.
 
-## Final version
+
+## Baseline: Window Classification Model <a name="baseline"></a>
+
+Determiners are strongly connected with the words around them. Thus, we decided to take a window classification model as a baseline. I took a model from the second assignment of [CS224d: Deep Learning for Natural Language Processing](http://cs224d.stanford.edu/), a precursor of [CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/syllabus.html)
+
+A brief overview of window models you can find in [CS224n Lecture 4, slide 17](http://web.stanford.edu/class/cs224n/lectures/lecture4.pdf).
+
+We used the following configuration:
+
+* Embed a word and its neightboors using [GloVe](https://nlp.stanford.edu/projects/glove/) vectors. We made experiments for window sizes 3, 5 and 7 which corresponds to 1, 2 or 3 neighboor words for a given center word. 
+
+* Apply a one-hidden-layer neural network to classify a given word. We introduces four classes with respect to particular determiners before a given word: O for a blank space, A, AN and THE.
+
+
+
+## Final version <a name="bi-lstm"></a>
 
 bi-LSTM for characters. bi-LSTM for words. Ну и всякие остальные красивости. Завтра допишу.
 
