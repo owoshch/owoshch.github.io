@@ -1,15 +1,13 @@
 ---
 layout: page
-title: About
+title: Hi. I'm Fedya.
 permalink: /about/
 ---
 
-Some information about you!
+[July, 2017 - August, 2018] I am conducting data science internship in Cisco, San Jose, California
+[July, 2019] Graduating from Bachelors Degree in Applied Mathmatics and Physics at Moscow Physics and Technology.
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[fedor.kitashov@phystech.edu](mailto:email@domain.com)
