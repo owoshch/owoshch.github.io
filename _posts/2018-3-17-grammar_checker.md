@@ -15,17 +15,17 @@ github: https://github.com/owoshch
 
 ## Demo
 
-Enter sentences like `I live in White House`, `London is a capital of Great Britain" or whatever incorrect sentence and then hit the button.
+Enter sentences like `I live in White House`, `London is a capital of Great Britain` or whatever incorrect sentence and then hit the button.
 
 {% include cs224n_demo.html
-    placeholder="London is a capital of Great Britain"
-    default_input="System will check whether you placed determiners correctly"
-    default_output="System will check whether you placed THE determiners correctly"
+    placeholder="London is a capital of Great Britain."
+    default_input="London is a capital of Great Britain."
+    default_output="London is the capital of Great Britain ."
     header="Demo"
     url="https://grammar-checker.herokuapp.com/api"
 %}
 
-**Disclaimer:** This system for trained on movie dialogs dataset. Hopefully, with a larger dataset we will be able to achieve better performance. System still fails in sequences like 'I have a ball. The ball is red.'
+**Disclaimer:** This system for trained on movie dialogs dataset. Hopefully, with a larger dataset we will be able to achieve better performance. System still fails in sequences like `I have a ball. The ball is red.`
 
 ## Baseline
 
