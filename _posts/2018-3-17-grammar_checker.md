@@ -12,9 +12,6 @@ github: https://github.com/owoshch
 
 
 
-
-## Demo
-
 Enter sentences like `I live in White House`, `London is a capital of Great Britain` or whatever incorrect sentence and then hit the button.
 
 {% include cs224n_demo.html
