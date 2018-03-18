@@ -31,8 +31,7 @@ Enter sentences like `I live in White`, `Obama was president of the United State
 
 I remember the first time I heard about the magic of Deep Learning for **Natural Language Processing (NLP)**. I was just starting a project with a young French startup [Riminder](https://www.riminder.net) and it was the first time I heard about word embeddings. There are moments in life when the confrontation with a new theory seems to make everything else irrelevant. Hearing about word vectors that encode similarity and meaning between words was one of these moments. I was baffled by the simplicity of the model as I started to play with these new concepts, building my first recurrent neural network for sentiment analysis. A few months later, as part of the master thesis of my master in the French university [Ecole polytechnique](https://www.polytechnique.edu) I was working on more advanced models for sequence tagging at [Proxem](https://www.proxem.com/en/).
 
-{% include image.html url="https://nlp.stanford.edu/projects/glove/images/man_woman.jpg"
-description="Linear Dependencies between word vectors - GloVe" %}
+
 
 
 
