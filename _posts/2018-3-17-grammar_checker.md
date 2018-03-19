@@ -76,7 +76,6 @@ We used the following configuration:
 <a name="bi-lstm"></a>
 ## Final version 
 bi-LSTM for characters. bi-LSTM for words. Ну и всякие остальные красивости. Завтра допишу.
-{% include image.html url="/images/confusion_matrix_normalized.png"
-description="Confusion matrix for a bi-LSTM network archieving the best f1-score 76.71%" %}
+![_config.yml]({{ site.baseurl }}/images/config.png)
 
 
