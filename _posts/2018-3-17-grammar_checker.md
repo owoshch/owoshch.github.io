@@ -22,7 +22,7 @@ Enter sentences like `I live in White House`, `London is a capital of Great Brit
     url="https://grammar-checker.herokuapp.com/api"
 %}
 
-**tl;dr** bi-LSTM model for characters and words embedding overtakes the Window classification model and reaches 0.764 f1-score on dev and test sets. This system is trained on movie dialogs dataset. Hopefully, with a larger dataset we will be able to achieve better performance. System still fails with sequences like `I have a ball. The ball is red.`
+**tl;dr** bi-LSTM model for characters and words embedding overtakes the [window classification model]((https://github.com/owoshch/english_determiners_checker) and reaches 0.764  f1-score on dev set and 0.764 f1-score test set. This system is trained on [movie dialogs dataset](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). Hopefully, with a larger dataset we will be able to achieve better performance. System still fails with sequences like `I have a ball. The ball is red.`
 
 
 
@@ -40,7 +40,7 @@ Given a paragraph, place the determiners (a, an, the) correctly.
 <a name="data"></a>
 ## Data
 
-We used [Cornell Movie Dialogs Corpus](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). We store each given utterance (no matter how sentences are there) in a text file with one word and its class per line. 
+We used [Cornell Movie Dialogs Corpus](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). We store each given utterance (no matter how many sentences are there) in a text file with one word and its class per line. 
 
 Example: `I have a ball. The ball is red.`
 
@@ -57,7 +57,7 @@ red O
 
 ## Train-Dev-Test split
 
-We splitted data in a way to make dataset uniform is terms of sentences leghts. Train-dev-split can be found in [this repo folder](https://github.com/owoshch/english_determiners_checker/tree/master/data/det)
+We splitted data in a way to make dataset uniform is terms of sentences leghts. Train-dev-test split can be found in [this repo folder](https://github.com/owoshch/english_determiners_checker/tree/master/data/det)
 
 
 
@@ -66,7 +66,7 @@ We splitted data in a way to make dataset uniform is terms of sentences leghts. 
 
 [Github repo](https://github.com/owoshch/english_determiners_checker)
 
-Determiners are strongly connected with the words around them. Thus, we decided to take a window classification model as a baseline. I took a model from the second assignment of [CS224d: Deep Learning for Natural Language Processing](http://cs224d.stanford.edu/), a precursor of [CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/syllabus.html)
+Determiners are strongly connected with the words around them. Thus, I decided to take a window classification model as a baseline. I took a model from the second assignment of [CS224d: Deep Learning for Natural Language Processing](http://cs224d.stanford.edu/), a precursor of [CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/syllabus.html)
 
 A brief overview of window models you can find in [CS224n Lecture 4, slide 17](http://web.stanford.edu/class/cs224n/lectures/lecture4.pdf).
 
@@ -74,7 +74,7 @@ We used the following configuration:
 
 * Embed a word and its neightboors using [GloVe](https://nlp.stanford.edu/projects/glove/) vectors. We made experiments for window sizes 3, 5 and 7 which corresponds to 1, 2 or 3 neighboor words for a given center word. 
 
-* Apply a one-hidden-layer neural network to classify a given word. We introduces four classes with respect to particular determiners before a given word: O for a blank space, A, AN and THE.
+* Apply a one-hidden-layer neural network to classify a given word. We introduce four classes with respect to particular determiners before a given word: O for a blank space, A, AN and THE.
 
 ### Results
 
@@ -96,8 +96,7 @@ description="Window size 3. F1-score: 0.684" %}
 As a more sophisticated model we took a bi-LSTM architecture. We ran the experiments based on [Guillaume Genthial's](https://github.com/guillaumegenthial) implementation of [bi-LSTM+CRF arhitecture for Named Entity Recognition](https://github.com/guillaumegenthial/sequence_tagging). Guillaume precisely explains his code in this [blogpost](https://guillaumegenthial.github.io/sequence-tagging-with-tensorflow.html)
 
 
-While CRF was not that helpful in determiners correction task as on NER, the embeddings for characters and words obtained from bi-LSTM
-helped to increase f1-score from 69% obtained by [Window classification model](https://github.com/owoshch/english_determiners_checker) to 75%. However, next step should be adding attention and an attempt to train this architecture on a larger dataset
+While CRF was not that helpful in the determiners correction task as on NER, the embeddings for characters and words obtained from bi-LSTM helped to increase f1-score from 69% obtained by [window classification model](https://github.com/owoshch/english_determiners_checker) to 75%. However, next steps should be adding attention and an attempt to train this architecture on a larger dataset.
 
 * bi-LSTM+CRF
 - DEV f1-score: 76.26 
