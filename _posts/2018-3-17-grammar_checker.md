@@ -80,12 +80,12 @@ We used the following configuration:
 
 We made 3 experiments with one-hidden-layer fully connected network with different window sizes and obtained the following results:
 
-Window size   | 3     | 5   | 7
---------------|-------|-----|------
-DEV f1-score  | 0.69  | tbd | 0.692
-TEST f1-score | tbd   | tbd | tbd
+* Window size 3. F1-score: 0.69
+* Window size 5. F1-score: t.b.d.
+* Window size 7. F1-score: 0.692
 
-This simple algorithm cann extract some information about the neightbors. Still it's not enough to correctly distinguish A and AN determiners.
+F1-scores are computed on dev tests. Confusion matrix for the model with window size 3 looks as follows:
+
 
 {% include image.html url="/images/window_3_confusion_matrix_normalized_dev.png"
 description="Window size 3. F1-score: 0.684" %}
@@ -96,10 +96,17 @@ description="Window size 3. F1-score: 0.684" %}
 
 As a more sophisticated model we took a bi-LSTM architecture. We ran the experiments based on [Guillaume Genthial's](https://github.com/guillaumegenthial) implementation of [bi-LSTM+CRF arhitecture for Named Entity Recognition](https://github.com/guillaumegenthial/sequence_tagging). Guillaume precisely explains his code in this [blogpost](https://guillaumegenthial.github.io/sequence-tagging-with-tensorflow.html)
 
-Bi-LSTM helped to extract features from characters that increased the quality of A and AN classification.
 
 While CRF was not that helpful in determiners correction task as on NER, the embeddings for characters and words obtained from bi-LSTM
 helped to increase f1-score from 69% obtained by [Window classification model](https://github.com/owoshch/english_determiners_checker) to 75%. However, next step should be adding attention and an attempt to train this architecture on a larger dataset
+
+* bi-LSTM+CRF
+- DEV f1-score: 76.26 
+- TEST f1-score: 76.40
+
+* bi-LSTM+Softmax
+- DEV f1-score: 75.08 
+- TEST f1-score: 74.84
 
 
 Architecture  | bi-LSTM+CRF | bi-LSTM+Softmax |
