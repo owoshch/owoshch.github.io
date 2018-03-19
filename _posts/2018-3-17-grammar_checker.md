@@ -12,7 +12,7 @@ github: https://github.com/owoshch
 
 
 
-Enter sentences like `I live in White House`, `London is a capital of Great Britain` or whatever incorrect sentence and then hit the button.
+Enter sentences like `I live in White House`, `London is a capital of Great Britain` or any other sentence you are doubting with and then hit the button.
 
 {% include cs224n_demo.html
     placeholder="London is a capital of Great Britain."
