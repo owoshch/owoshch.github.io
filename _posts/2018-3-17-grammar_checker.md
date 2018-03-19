@@ -7,7 +7,7 @@ date:   2018-03-17
 mathjax: true
 comments: true
 tags: tensorflow NLP
-github: https://github.com/owoshch
+github: https://github.com/owoshch/english_determiners_checker
 ---
 
 
@@ -61,6 +61,8 @@ Liza will write it down.
 
 <a name="baseline"></a>
 ## Baseline: Window Classification Model 
+
+[Github repo](https://github.com/owoshch/english_determiners_checker)
 
 Determiners are strongly connected with the words around them. Thus, we decided to take a window classification model as a baseline. I took a model from the second assignment of [CS224d: Deep Learning for Natural Language Processing](http://cs224d.stanford.edu/), a precursor of [CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/syllabus.html)
 
