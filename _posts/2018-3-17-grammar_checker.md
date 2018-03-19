@@ -22,7 +22,7 @@ Enter sentences like `I live in White House`, `London is a capital of Great Brit
     url="https://grammar-checker.herokuapp.com/api"
 %}
 
-**tl;dr** bi-LSTM model for characters and words embedding overtakes the [window classification model]((https://github.com/owoshch/english_determiners_checker) and reaches 0.764  f1-score on dev set and 0.764 f1-score test set. This system is trained on [movie dialogs dataset](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). Hopefully, with a larger dataset we will be able to achieve better performance. System still fails with sequences like `I have a ball. The ball is red.`
+**tl;dr** bi-LSTM model for characters and words embedding overtakes the [window classification model](https://github.com/owoshch/english_determiners_checker) and reaches 0.764  f1-score on dev set and 0.764 f1-score test set. This system is trained on [movie dialogs dataset](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). Hopefully, with a larger dataset we will be able to achieve better performance. System still fails with sequences like `I have a ball. The ball is red.`
 
 
 
