@@ -57,7 +57,9 @@ red O
 
 ## Train-Dev-Test split
 
-Liza will write it down.
+Our train-dev-split can be found in [this repo folder](https://github.com/owoshch/english_determiners_checker/tree/master/data/det)
+
+We splitted data in a way to make dataset uniform is terms of sentences leghts.
 
 <a name="baseline"></a>
 ## Baseline: Window Classification Model 
@@ -78,15 +80,19 @@ We used the following configuration:
 
 We made 3 experiments with one-hidden-layer fully connected network with different window sizes and obtained the following results:
 
-Window size   | 3   | 5   | 7
---------------|-----|-----|----
-DEV f1-score  | tbd | tbd | tbd
-TEST f1-score | tbd | tbd | tbd
+Window size   | 3     | 5   | 7
+--------------|-------|-----|------
+DEV f1-score  | 0.69% | tbd | 0.692
+TEST f1-score | tbd   | tbd | tbd
 
 
 <a name="bi-lstm"></a>
 ## Final version 
-bi-LSTM for characters. bi-LSTM for words. Ну и всякие остальные красивости. Завтра допишу.
+
+As a more sophisticated model we took a bi-LSTM architecture. We ran the experiments based on [Guillaume Genthial's](https://github.com/guillaumegenthial) implementation of [bi-LSTM+CRF arhitecture for Named Entity Recognition](https://github.com/guillaumegenthial/sequence_tagging). Guillaume precisely explains his code in this [blogpost](https://guillaumegenthial.github.io/sequence-tagging-with-tensorflow.html)
+
+While CRF was not that helpful in determiners correction task, the embeddings for characters and words obtained from bi-LSTM
+helped to increase f1-score from 69% obtained by [Window classification model](https://github.com/owoshch/english_determiners_checker) to 77%. 
 {% include image.html url="/images/confusion_matrix_normalized.png"
 description="Confusion matrix for a bi-LSTM network archieving the best f1-score 76.71%" %}
 
