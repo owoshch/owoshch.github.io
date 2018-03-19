@@ -107,7 +107,6 @@ helped to increase f1-score from 69% obtained by [Window classification model](h
 - DEV f1-score: 75.08 
 - TEST f1-score: 74.84
 
-
 {% include image.html url="/images/confusion_matrix_normalized.png"
 description="Confusion matrix for a bi-LSTM network archieving  f1-score 76.26% on dev and 76.40% on test " %}
 
