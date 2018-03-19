@@ -76,10 +76,10 @@ We used the following configuration:
 
 We made 3 experiments with one-hidden-layer fully connected network with different window sizes and obtained the following results:
 
-Window size  | 3   | 5   | 7
--------------|-----|-----|----
-DEV f1-score | tbd | tbd | tbd
-
+Window size   | 3   | 5   | 7
+--------------|-----|-----|----
+DEV f1-score  | tbd | tbd | tbd
+TEST f1-score | tbd | tbd | tbd
 
 
 <a name="bi-lstm"></a>
