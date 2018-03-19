@@ -22,7 +22,7 @@ Enter sentences like `I live in White House`, `London is a capital of Great Brit
     url="https://grammar-checker.herokuapp.com/api"
 %}
 
-**Disclaimer:** This system is trained on movie dialogs dataset. Hopefully, with a larger dataset we will be able to achieve better performance. System still fails with sequences like `I have a ball. The ball is red.`
+**tl;dr** bi-LSTM model for characters and words embedding overtakes the Window classification model and reaches 0.764 f1-score on dev and test sets. This system is trained on movie dialogs dataset. Hopefully, with a larger dataset we will be able to achieve better performance. System still fails with sequences like `I have a ball. The ball is red.`
 
 
 
@@ -35,7 +35,7 @@ Enter sentences like `I live in White House`, `London is a capital of Great Brit
 <a name="challenge"></a>
 ## Challenge 
 
-I suck in placing determiners correctly.
+Given a paragraph, place the determiners (a, an, the) correctly.
 
 <a name="data"></a>
 ## Data
@@ -57,9 +57,9 @@ red O
 
 ## Train-Dev-Test split
 
-Our train-dev-split can be found in [this repo folder](https://github.com/owoshch/english_determiners_checker/tree/master/data/det)
+We splitted data in a way to make dataset uniform is terms of sentences leghts. Train-dev-split can be found in [this repo folder](https://github.com/owoshch/english_determiners_checker/tree/master/data/det)
 
-We splitted data in a way to make dataset uniform is terms of sentences leghts.
+
 
 <a name="baseline"></a>
 ## Baseline: Window Classification Model 
@@ -82,7 +82,7 @@ We made 3 experiments with one-hidden-layer fully connected network with differe
 
 Window size   | 3     | 5   | 7
 --------------|-------|-----|------
-DEV f1-score  | 0.69% | tbd | 0.692
+DEV f1-score  | 0.69  | tbd | 0.692
 TEST f1-score | tbd   | tbd | tbd
 
 
@@ -91,9 +91,16 @@ TEST f1-score | tbd   | tbd | tbd
 
 As a more sophisticated model we took a bi-LSTM architecture. We ran the experiments based on [Guillaume Genthial's](https://github.com/guillaumegenthial) implementation of [bi-LSTM+CRF arhitecture for Named Entity Recognition](https://github.com/guillaumegenthial/sequence_tagging). Guillaume precisely explains his code in this [blogpost](https://guillaumegenthial.github.io/sequence-tagging-with-tensorflow.html)
 
-While CRF was not that helpful in determiners correction task, the embeddings for characters and words obtained from bi-LSTM
-helped to increase f1-score from 69% obtained by [Window classification model](https://github.com/owoshch/english_determiners_checker) to 77%. 
+While CRF was not that helpful in determiners correction task as on NER, the embeddings for characters and words obtained from bi-LSTM
+helped to increase f1-score from 69% obtained by [Window classification model](https://github.com/owoshch/english_determiners_checker) to 75%. However, next step should be adding attention and an attempt to train this architecture on a larger dataset
+
+
+Architecture  | bi-LSTM+CRF | bi-LSTM+Softmax |
+--------------|-------------|-----------------|
+DEV f1-score  | 76.26       | 75.08           | 
+TEST f1-score | 76.40       | 74.84           | 
+
 {% include image.html url="/images/confusion_matrix_normalized.png"
-description="Confusion matrix for a bi-LSTM network archieving the best f1-score 76.71%" %}
+description="Confusion matrix for a bi-LSTM network archieving  f1-score 76.26% on dev and 76.40% on test " %}
 
 
