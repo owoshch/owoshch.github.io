@@ -72,6 +72,15 @@ We used the following configuration:
 
 * Apply a one-hidden-layer neural network to classify a given word. We introduces four classes with respect to particular determiners before a given word: O for a blank space, A, AN and THE.
 
+### Results
+
+We made 3 experiments with one-hidden-layer fully connected network with different window sizes and obtained the following results:
+
+Window size | 3 | 5 | 7
+------------ | ------------- | -------------
+DEV f1-score | tbd | tbd | tbd
+
+
 
 <a name="bi-lstm"></a>
 ## Final version 
