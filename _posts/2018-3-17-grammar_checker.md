@@ -86,7 +86,6 @@ We made 3 experiments with one-hidden-layer fully connected network with differe
 
 F1-scores are computed on dev tests. Confusion matrix for the model with window size 3 looks as follows:
 
-
 {% include image.html url="/images/window_3_confusion_matrix_normalized_dev.png"
 description="Window size 3. F1-score: 0.684" %}
 
@@ -108,11 +107,6 @@ helped to increase f1-score from 69% obtained by [Window classification model](h
 - DEV f1-score: 75.08 
 - TEST f1-score: 74.84
 
-
-Architecture  | bi-LSTM+CRF | bi-LSTM+Softmax |
---------------|-------------|-----------------|
-DEV f1-score  | 76.26       | 75.08           | 
-TEST f1-score | 76.40       | 74.84           | 
 
 {% include image.html url="/images/confusion_matrix_normalized.png"
 description="Confusion matrix for a bi-LSTM network archieving  f1-score 76.26% on dev and 76.40% on test " %}
