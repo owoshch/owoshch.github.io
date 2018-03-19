@@ -13,7 +13,7 @@
             <div class="card text-center bg-light">
                 <div class="card-body" style="padding-bottom: 0.2cm">
                     <input class="card-title form-control" type="text" id="input" name="input" placeholder="Input sentence"/>
-                    <button class="card-text btn btn-outline-primary" id="btn">Find Entities</button>
+                    <button class="card-text btn btn-outline-primary" id="btn">Check!</button>
                     <div class="spinner" id="spinner" style="display: none">
                       <div class="double-bounce1"></div>
                       <div class="double-bounce2"></div>
@@ -22,13 +22,13 @@
                 <div class="card-footer bg-white">
                     <pre class="card-text api-pre" style="padding-bottom: 0.2cm">
                         <div class="item">Your input:</div>
-                        <div class="item" id="api_input">I love Paris </div>
+                        <div class="item" id="api_input">London is a capital of Great Britain. </div>
                     </pre>
                 </div>
                 <div class="card-footer bg-white">
                     <pre class="card-text api-pre" style="padding-bottom: 0.2cm">
                         <div class="item">System response:</div>
-                        <div class="item" id="api_output">0 0   B-LOC</div>
+                        <div class="item" id="api_output">London is the capital of Great Britain .</div>
                     </pre>
                 </div>
             </div>
