@@ -40,7 +40,7 @@ Given a paragraph, place the determiners (a, an, the) correctly.
 <a name="data"></a>
 ## Data
 
-We used [Cornell Movie Dialogs Corpus](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). We store each given utterance (no matter how many sentences are there) in a text file with one word and its class per line. 
+We used [Cornell Movie Dialogs Corpus](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). We store each given utterance (no matter how many sentences there are) in a text file with one word and its class per line. 
 
 Example: `I have a ball. The ball is red.`
 
@@ -57,7 +57,7 @@ red O
 
 ## Train-Dev-Test split
 
-We splitted data in a way to make dataset uniform is terms of sentences leghts. Train-dev-test split can be found in [this repo folder](https://github.com/owoshch/english_determiners_checker/tree/master/data/det)
+We splitted data to the train, development and test datasets, distributing utterances uniformly by its length. Train-dev-test split can be found in [this repo folder](https://github.com/owoshch/english_determiners_checker/tree/master/data/det)
 
 
 
@@ -72,7 +72,7 @@ A brief overview of window models you can find in [CS224n Lecture 4, slide 17](h
 
 We used the following configuration:
 
-* Embed a word and its neightboors using [GloVe](https://nlp.stanford.edu/projects/glove/) vectors. We made experiments for window sizes 3, 5 and 7 which corresponds to 1, 2 or 3 neighboor words for a given center word. 
+* Embed a word and its neightbors using [GloVe](https://nlp.stanford.edu/projects/glove/) vectors. We made experiments for window sizes 3, 5 and 7 which corresponds to 1, 2 or 3 neighboor words for a given center word. 
 
 * Apply a one-hidden-layer neural network to classify a given word. We introduce four classes with respect to particular determiners before a given word: O for a blank space, A, AN and THE.
 
@@ -93,7 +93,7 @@ description="Window size 3. F1-score: 0.684" %}
 <a name="bi-lstm"></a>
 ## Final version 
 
-As a more sophisticated model we took a bi-LSTM architecture. We ran the experiments based on [Guillaume Genthial's](https://github.com/guillaumegenthial) implementation of [bi-LSTM+CRF arhitecture for Named Entity Recognition](https://github.com/guillaumegenthial/sequence_tagging). Guillaume precisely explains his code in this [blogpost](https://guillaumegenthial.github.io/sequence-tagging-with-tensorflow.html)
+As a more sophisticated model we took a bi-LSTM architecture. We ran the experiments based on [Guillaume Genthial's](https://github.com/guillaumegenthial) implementation of [bi-LSTM+CRF arhitecture for Named Entity Recognition](https://github.com/guillaumegenthial/sequence_tagging). Guillaume precisely explains his code in this [blogpost](https://guillaumegenthial.github.io/sequence-tagging-with-tensorflow.html).
 
 
 While CRF was not that helpful in the determiners correction task as on NER, the embeddings for characters and words obtained from bi-LSTM helped to increase f1-score from 69% obtained by [window classification model](https://github.com/owoshch/english_determiners_checker) to 75%. However, next steps should be adding attention and an attempt to train this architecture on a larger dataset.
