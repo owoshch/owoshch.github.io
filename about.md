@@ -1,10 +1,10 @@
 ---
-title: CV
-description: CV
-date: 2018-24-05
+title: "Creation of a Landscape: The Logic or Urbanization in the PRC"
+description: NYU East Asian Studies Department, MA Thesis Defense
+date: 2013-11-01
 layout: pdf
 categories: writing
-permalink: /about/
+permalink: /writing/creation-of-a-landscape/
 ---
 
-<iframe src="https://drive.google.com/file/d/1-xOiQLXvH1c08V2l2mpbpHzovfpCzUh8/view" width="100%" height="100%"></iframe>
+<iframe src="https://docs.google.com/file/d/0B8aGkJVsdqiJamVpUnJ1TDlFbFU/preview" width="100%" height="100%"></iframe>
