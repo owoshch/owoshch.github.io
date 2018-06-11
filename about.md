@@ -5,13 +5,14 @@ permalink: /about/
 ---
 
 
-I'm a Bachelor's Degree Radio Engineering Student.
+I'm graduating in Summer 2019 with Bachelor’s	Degree in applied	mathematics and	physics	from the Department	of Radio	 Engineering and Cybernetics at Moscow Institute of Physics and Technology.
 
-In August, 2017 I took a gap year at Moscow Institute of Physics and Technhology and went for a one-year software engineering internship in Cisco, San Jose, California. 
+I'm natural language processing enthusiast seeking for new opportunities. If you feel like I would be a good match for your team, you can contact me any time via links below.
 
-I will be in the U.S. up to August, 2018. From September, 2018 I'm in Moscow.
-If you are interested in hiring me for an internship or being my PhD advisor, dm me.
+I'm open for Masters or Phd opportunities in 2019.
 
+### Currect occupation: 
+Cisco AI group, San Jose, California. Up to August, 2018
 
 ### Contact me
 
