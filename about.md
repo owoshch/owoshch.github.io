@@ -5,14 +5,10 @@ permalink: /about/
 ---
 
 
-I'm graduating in Summer 2019 with Bachelor’s	Degree in applied	mathematics and	physics	from the Department	of Radio	 Engineering and Cybernetics at Moscow Institute of Physics and Technology.
+Computer vision research engineer at Mail.Ru Group X OpenLab Summer Student at CERN. 
 
-I'm natural language processing enthusiast seeking for new opportunities. If you feel like I would be a good match for your team, you can contact me any time via links below.
+Graduated with Bachelors degree in applied mathematics and physics from Moscow Institute of Physics and Technology. 
 
-I'm open for Masters or Phd opportunities in 2019.
-
-### Currect occupation: 
-Cisco AI group, San Jose, California. Up to August, 2018
 
 ### Contact me
 
