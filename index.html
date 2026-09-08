@@ -1,18 +1,46 @@
----
-layout: default
----
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fedor Kitashov</title>
+<meta name="description" content="Research engineer at Google DeepMind, based in London. Music as овощ — one song a month in 2026.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Unbounded:wght@600..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Fedor Kitashov">
+<meta property="og:description" content="Research engineer at Google DeepMind, based in London. Music as овощ — one song a month in 2026.">
+<meta property="og:url" content="https://owoshch.github.io/">
+</head>
+<body>
+<div class="page">
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+  <header class="top end">
+    <nav>
+      <a href="music.html">Music</a>
+    </nav>
+  </header>
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+  <main>
+    <h1 class="masthead">Fedor <span class="line">Kitashov</span></h1>
+    <a class="alias" href="music.html" lang="ru">овощ</a>
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
+    <p class="bio">I am a Moscow born-raised-and-educated, London-based research
+      engineer. I work at Google DeepMind.</p>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+    <p class="bio">I compose music under the name <span lang="ru">овощ</span>
+      (Russian for vegetable) and release one song a month in 2026.</p>
+
+    <ul class="elsewhere">
+      <li><a href="https://www.linkedin.com/in/kitashov">LinkedIn</a></li>
+      <li><a href="https://github.com/owoshch">GitHub</a></li>
+      <li><a href="https://open.spotify.com/artist/1K7Bggsg4Zgv6ecC0iQhsl">Spotify</a></li>
+    </ul>
+  </main>
+
 </div>
+</body>
+</html>

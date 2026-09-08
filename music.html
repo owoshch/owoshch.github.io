@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>овощ — music by Fedor Kitashov</title>
+<meta name="description" content="Releases by овощ, the music project of Fedor Kitashov. One song a month in 2026.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Unbounded:wght@600..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="овощ">
+<meta property="og:description" content="Music by Fedor Kitashov. One song a month in 2026.">
+<meta property="og:url" content="https://owoshch.github.io/music.html">
+</head>
+<body>
+<div class="page">
+
+  <header class="top">
+    <a href="./">Fedor Kitashov</a>
+    <nav>
+      <span class="here">Music</span>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="masthead" lang="ru">овощ</h1>
+
+    <p class="bio">One song a month in 2026. Newest first — pick one to hear it.</p>
+
+    <div class="player" id="player-shell" hidden>
+      <iframe id="player" title="Spotify player" src="" width="100%" height="80"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+    </div>
+
+    <ul class="releases" id="releases"></ul>
+
+    <p class="empty" id="empty" hidden>
+      The list is empty. Everything is on
+      <a href="https://open.spotify.com/artist/1K7Bggsg4Zgv6ecC0iQhsl">Spotify</a>
+      in the meantime.
+    </p>
+  </main>
+
+  <footer class="foot">
+    <p>All releases on
+      <a href="https://open.spotify.com/artist/1K7Bggsg4Zgv6ecC0iQhsl">Spotify</a>.</p>
+  </footer>
+
+</div>
+
+<script src="releases.js"></script>
+<script>
+(function () {
+  var list = document.getElementById('releases');
+  var shell = document.getElementById('player-shell');
+  var frame = document.getElementById('player');
+  var empty = document.getElementById('empty');
+
+  var releases = (window.RELEASES || []).slice().sort(function (a, b) {
+    return b.date.localeCompare(a.date);
+  });
+
+  if (!releases.length) {
+    empty.hidden = false;
+    return;
+  }
+
+  var fmt = new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric', month: 'long', year: 'numeric'
+  });
+
+  var current = null;
+
+  function embedUrl(release) {
+    return 'https://open.spotify.com/embed/' + release.embed + '?utm_source=generator';
+  }
+
+  function select(button, release) {
+    frame.src = embedUrl(release);
+    shell.hidden = false;
+    if (current) current.setAttribute('aria-current', 'false');
+    button.setAttribute('aria-current', 'true');
+    current = button;
+  }
+
+  releases.forEach(function (release, i) {
+    var item = document.createElement('li');
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'track';
+    button.setAttribute('aria-current', 'false');
+
+    var title = document.createElement('span');
+    title.className = 'title';
+    title.lang = release.lang || 'ru';
+    title.textContent = release.title;
+
+    var date = document.createElement('span');
+    date.className = 'date';
+    date.textContent = fmt.format(new Date(release.date + 'T12:00:00'));
+
+    button.append(title, date);
+    button.addEventListener('click', function () { select(button, release); });
+    item.append(button);
+    list.append(item);
+
+    // Load the newest release into the player, ready but not playing.
+    if (i === 0) select(button, release);
+  });
+})();
+</script>
+</body>
+</html>
